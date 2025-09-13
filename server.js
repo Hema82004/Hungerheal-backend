@@ -28,6 +28,9 @@ app.use('/api/location', locationRoutes);
 pool.connect()
   .then(() => console.log('✅ Connected to PostgreSQL'))
   .catch(err => console.error('❌ PostgreSQL connection error:', err));
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running on Render!");
+});
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
